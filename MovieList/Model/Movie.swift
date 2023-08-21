@@ -10,9 +10,9 @@ import Foundation
 
 struct Movie : Codable{
     
-    let title: String?
-    let year: String?
-    let imdbId: String?
+    let title: String
+    let year: String
+    let imdbId: String
     let type : String
     let poster : String
     

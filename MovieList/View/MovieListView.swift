@@ -19,7 +19,14 @@ struct MovieListView: View {
     var body: some View{
         List(MovieListViewModel.movies, id: \.imdbId){
             movie in
-            Text(movie.title!)
+            HStack{
+                Image("placeholder2.png")
+                    .frame(width: 100, height: 150)
+                
+                VStack{
+                    Text(movie.title)
+                }
+            }
         }
     }
 }
