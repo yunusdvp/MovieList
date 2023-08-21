@@ -20,7 +20,8 @@ struct MovieListView: View {
         List(MovieListViewModel.movies, id: \.imdbId){
             movie in
             HStack{
-                Image("placeholder2.png")
+                Image("placeholder")
+                    .resizable()
                     .frame(width: 100, height: 150)
                 
                 VStack{

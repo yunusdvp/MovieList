@@ -9,7 +9,7 @@ import Foundation
 
 class DownloaderClient{
     func downloadMovie(search: String, completion: @escaping(Result<[Movie]?,DownloaderError>) -> Void) {
-        guard let url = URL(string: "https://www.omdbapi.com/?i=tt3896198&apikey=b5ddf4f0") else {
+        guard let url = URL(string: "https://www.omdbapi.com/?s=\(search)&apikey=f5133d7") else {
             return completion(.failure(.noUrl))
         }
         URLSession.shared.dataTask(with: url){ (data,response,error) in
