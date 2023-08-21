@@ -20,8 +20,8 @@ class MovieListViewModel: ObservableObject {
                 case.failure(let error):
                     print(error)
             case.success(let movieArray):
-                if let filmArray = movieArray {
-                    self.movies = movieArray!
+                if let movieArray = movieArray {
+                    self.movies = movieArray
                 }
             }
         }

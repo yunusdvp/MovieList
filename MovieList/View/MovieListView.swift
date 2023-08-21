@@ -15,4 +15,17 @@ struct MovieListView: View {
         self.MovieListViewModel = MovieList.MovieListViewModel()
         self.MovieListViewModel.searchMovie(movieName: "titanic")
     }
+    
+    var body: some View{
+        List(MovieListViewModel.movies, id: \.imdbId){
+            movie in
+            Text(movie.title!)
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        MovieListView()
+    }
 }
