@@ -20,20 +20,20 @@ struct Movie : Codable{
     private enum CodingKeys: String, CodingKey {
         case title = "Title"
         case year = "Year"
-        case imdbId = "imdbId"
+        case imdbId = "imdbID"
         case type = "Type"
         case poster = "Poster"
     }
-    
-    struct incomingMovies : Codable {
-        let movies : [Movie]
+}
+struct MoviesResults : Codable {
+    let movies : [Movie]
         
-        private enum CodingKeys : String, CodingKey {
-            case movies = "Search"
+    private enum CodingKeys : String, CodingKey {
+        case movies = "Search"
         }
     }
     
     
     
     
-}
+
