@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		461761802A94CE7D00AF93CE /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4617617F2A94CE7D00AF93CE /* MovieDetail.swift */; };
 		461761822A94D11400AF93CE /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461761812A94D11400AF93CE /* MovieDetailViewModel.swift */; };
+		461761852A94E4DA00AF93CE /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461761842A94E4DA00AF93CE /* ErrorManager.swift */; };
+		4617618B2A94EF0E00AF93CE /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4617618A2A94EF0E00AF93CE /* PopupView.swift */; };
 		467018702A8FB08300AE4596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4670186F2A8FB08300AE4596 /* Assets.xcassets */; };
 		467018732A8FB08300AE4596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 467018722A8FB08300AE4596 /* Preview Assets.xcassets */; };
 		4670187D2A8FB08300AE4596 /* MovieListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670187C2A8FB08300AE4596 /* MovieListTests.swift */; };
@@ -44,6 +46,8 @@
 /* Begin PBXFileReference section */
 		4617617F2A94CE7D00AF93CE /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		461761812A94D11400AF93CE /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		461761842A94E4DA00AF93CE /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		4617618A2A94EF0E00AF93CE /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		467018682A8FB08100AE4596 /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4670186F2A8FB08300AE4596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		467018722A8FB08300AE4596 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		461761832A94E4CA00AF93CE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				461761842A94E4DA00AF93CE /* ErrorManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		4670185F2A8FB08100AE4596 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +122,7 @@
 		4670186A2A8FB08100AE4596 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				461761832A94E4CA00AF93CE /* Manager */,
 				E992D0042A935A8200EAE247 /* ViewModel */,
 				469A5A682A934F4500D612D0 /* Apps */,
 				46F2B3FD2A934C8A00FD2A92 /* View */,
@@ -178,6 +191,7 @@
 				E992D0092A9361F600EAE247 /* MovieListView.swift */,
 				E9B94C8D2A93AD0D00B12021 /* SpecialImage.swift */,
 				E9B94C8F2A94A2CC00B12021 /* DetailView.swift */,
+				4617618A2A94EF0E00AF93CE /* PopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,10 +339,12 @@
 				E9B94C902A94A2CC00B12021 /* DetailView.swift in Sources */,
 				46F2B3F92A934C2600FD2A92 /* Movie.swift in Sources */,
 				461761802A94CE7D00AF93CE /* MovieDetail.swift in Sources */,
+				461761852A94E4DA00AF93CE /* ErrorManager.swift in Sources */,
 				E9B94C8E2A93AD0D00B12021 /* SpecialImage.swift in Sources */,
 				E9B94C8C2A93AB1B00B12021 /* ImageDownloaderService.swift in Sources */,
 				461761822A94D11400AF93CE /* MovieDetailViewModel.swift in Sources */,
 				E9B94C832A93701200B12021 /* DownloaderService.swift in Sources */,
+				4617618B2A94EF0E00AF93CE /* PopupView.swift in Sources */,
 				E992D0082A93613400EAE247 /* MovieViewModel.swift in Sources */,
 				E992D00A2A9361F600EAE247 /* MovieListView.swift in Sources */,
 			);

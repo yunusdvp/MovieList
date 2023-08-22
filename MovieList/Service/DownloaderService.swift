@@ -48,8 +48,3 @@ class DownloaderClient{
 }
 
     
-    enum DownloaderError : Error {
-        case noUrl
-        case noData
-        case noDataProcess
-    }
