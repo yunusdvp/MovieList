@@ -48,7 +48,7 @@ struct MovieListView: View {
                 })
           
             
-        }.navigationTitle(Text("Film Kitabı"))
+        }.navigationTitle(Text("Movie Book"))
         }
         }
     }
@@ -59,3 +59,4 @@ struct ContentView_Previews: PreviewProvider {
         MovieListView()
     }
 }
+ 
