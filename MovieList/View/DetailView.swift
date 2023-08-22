@@ -9,21 +9,30 @@ import SwiftUI
 
 struct DetailView: View {
     
-    let imdbId : String
-    
+    let imdbId: String
+       
     @ObservedObject var movieDetailViewModel = MovieDetailViewModel()
-    
+    @State private var isPopupVisible = false
+       
     var body: some View {
-        VStack(alignment:.leading, spacing:5){
-            HStack{
+        VStack(alignment: .leading, spacing: 5) {
+            HStack {
                 Spacer()
-                SpecialImage(url: movieDetailViewModel.movieDetail?.poster ?? "").frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.3, alignment: .center)
+                SpecialImage(url: movieDetailViewModel.movieDetail?.poster ?? "")
+                    .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.3, alignment: .center)
                 Spacer()
             }
             
-            Text(movieDetailViewModel.movieDetail?.title ?? "Film Ismi Gösterilecek").font(.title).foregroundColor(.blue).padding()
+            Text(movieDetailViewModel.movieDetail?.title ?? "Film Ismi Gösterilecek")
+                .font(.title)
+                .foregroundColor(.blue)
+                .padding()
             
-            Text(movieDetailViewModel.movieDetail?.plot ?? "Film Plotu Gösterilecek").padding()
+            Text(movieDetailViewModel.movieDetail?.plot ?? "Film Plotu Gösterilecek")
+                .padding()
+                .onTapGesture {
+                    isPopupVisible.toggle()
+                }
             
             Text("Director: \(movieDetailViewModel.movieDetail?.director ?? "Yönetmen Gösterilecek")").padding()
             
@@ -34,16 +43,19 @@ struct DetailView: View {
             Text("Year: \(movieDetailViewModel.movieDetail?.year ?? "Yıl Gösterilecek")").padding()
             
             Spacer()
-            
-        }.onAppear(perform: {
+        }
+        .onAppear(perform: {
             self.movieDetailViewModel.MovieDetailResponse(imdbId: imdbId)
         })
+        .sheet(isPresented: $isPopupVisible) {
+            PopUpView(content: movieDetailViewModel.movieDetail?.plot ?? "", isPresented: $isPopupVisible)
+        }
     }
 }
-
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(imdbId: "test")
     }
 }
+
