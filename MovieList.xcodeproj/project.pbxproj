@@ -17,6 +17,9 @@
 		E992D0082A93613400EAE247 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992D0072A93613400EAE247 /* MovieViewModel.swift */; };
 		E992D00A2A9361F600EAE247 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992D0092A9361F600EAE247 /* MovieListView.swift */; };
 		E9B94C832A93701200B12021 /* DownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B94C822A93701200B12021 /* DownloaderService.swift */; };
+		E9B94C8C2A93AB1B00B12021 /* ImageDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B94C8B2A93AB1B00B12021 /* ImageDownloaderService.swift */; };
+		E9B94C8E2A93AD0D00B12021 /* SpecialImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B94C8D2A93AD0D00B12021 /* SpecialImage.swift */; };
+		E9B94C902A94A2CC00B12021 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B94C8F2A94A2CC00B12021 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		E992D0072A93613400EAE247 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		E992D0092A9361F600EAE247 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		E9B94C822A93701200B12021 /* DownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderService.swift; sourceTree = "<group>"; };
+		E9B94C8B2A93AB1B00B12021 /* ImageDownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderService.swift; sourceTree = "<group>"; };
+		E9B94C8D2A93AD0D00B12021 /* SpecialImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialImage.swift; sourceTree = "<group>"; };
+		E9B94C8F2A94A2CC00B12021 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B94C822A93701200B12021 /* DownloaderService.swift */,
+				E9B94C8B2A93AB1B00B12021 /* ImageDownloaderService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -164,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				E992D0092A9361F600EAE247 /* MovieListView.swift */,
+				E9B94C8D2A93AD0D00B12021 /* SpecialImage.swift */,
+				E9B94C8F2A94A2CC00B12021 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,7 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				469A5A6E2A93553D00D612D0 /* MovieListApp.swift in Sources */,
+				E9B94C902A94A2CC00B12021 /* DetailView.swift in Sources */,
 				46F2B3F92A934C2600FD2A92 /* Movie.swift in Sources */,
+				E9B94C8E2A93AD0D00B12021 /* SpecialImage.swift in Sources */,
+				E9B94C8C2A93AB1B00B12021 /* ImageDownloaderService.swift in Sources */,
 				E9B94C832A93701200B12021 /* DownloaderService.swift in Sources */,
 				E992D0082A93613400EAE247 /* MovieViewModel.swift in Sources */,
 				E992D00A2A9361F600EAE247 /* MovieListView.swift in Sources */,
