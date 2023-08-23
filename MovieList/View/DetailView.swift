@@ -13,6 +13,8 @@ struct DetailView: View {
        
     @ObservedObject var movieDetailViewModel = MovieDetailViewModel()
     @State private var isPopupVisible = false
+    @State private var isSelectImage = false
+    
        
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -20,6 +22,12 @@ struct DetailView: View {
                 Spacer()
                 SpecialImage(url: movieDetailViewModel.movieDetail?.poster ?? "")
                     .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height * 0.3, alignment: .center)
+                    .onTapGesture {
+                        isSelectImage = true
+                        isPopupVisible.toggle()
+                        
+                        
+                    }
                 Spacer()
             }
             
@@ -31,6 +39,7 @@ struct DetailView: View {
             Text(movieDetailViewModel.movieDetail?.plot ?? "Film Plotu Gösterilecek")
                 .padding()
                 .onTapGesture {
+                    isSelectImage = false
                     isPopupVisible.toggle()
                 }
             
@@ -48,7 +57,15 @@ struct DetailView: View {
             self.movieDetailViewModel.MovieDetailResponse(imdbId: imdbId)
         })
         .sheet(isPresented: $isPopupVisible) {
-            PopUpView(content: movieDetailViewModel.movieDetail?.plot ?? "", isPresented: $isPopupVisible)
+            if isSelectImage{
+                PopUpView(content: "", isPresented: $isPopupVisible, image: movieDetailViewModel.movieDetail?.poster ?? "")
+                
+                
+            }else{
+                PopUpView(content: movieDetailViewModel.movieDetail?.plot ?? "", isPresented: $isPopupVisible, image: "")
+            }
+            
+            
         }
     }
 }
