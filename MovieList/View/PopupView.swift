@@ -15,10 +15,15 @@ struct PopUpView: View {
         VStack {
             Spacer()
             ScrollView {
-                Text(content)
-                    .padding()
-                SpecialImage(url: image)
-                    .frame(alignment: .center)
+                if content != "" {
+                    Text(content)
+                        .padding()
+                    
+                }else{
+                    SpecialImage(url: image)
+                        .frame(alignment: .center)
+                }
+                
             }
             //.frame(maxHeight: UIScreen.main.bounds.height * 0.5)
             .background(Color.white)
