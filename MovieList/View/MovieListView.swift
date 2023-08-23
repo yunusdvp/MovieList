@@ -24,7 +24,7 @@ struct MovieListView: View {
         
                 TextField("Aranacak Film", text: $searchedMovie, onEditingChanged:{ _ in }, onCommit: {
                 self.MovieListViewModel.searchMovie(movieName: searchedMovie.trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? searchedMovie)
-            }).padding().textFieldStyle(RoundedBorderTextFieldStyle())
+                }).padding().textFieldStyle(RoundedBorderTextFieldStyle()).disableAutocorrection(true)
             
         List(MovieListViewModel.movies, id: \.imdbId) { movie in
             NavigationLink(
