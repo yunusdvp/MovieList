@@ -23,7 +23,7 @@ struct MovieListView: View {
             
             VStack {
         
-                TextField("Aranacak Film", text: $searchedMovie)
+                TextField("Search Movie", text: $searchedMovie)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .disableAutocorrection(true)
