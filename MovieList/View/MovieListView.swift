@@ -13,6 +13,7 @@ struct MovieListView: View {
     
     @State var searchedMovie = ""
     
+    
     init(){
         self.MovieListViewModel = MovieList.MovieListViewModel()
     }
@@ -22,9 +23,18 @@ struct MovieListView: View {
             
             VStack {
         
-                TextField("Aranacak Film", text: $searchedMovie, onEditingChanged:{ _ in }, onCommit: {
-                self.MovieListViewModel.searchMovie(movieName: searchedMovie.trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? searchedMovie)
-            }).padding().textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Search Movie", text: $searchedMovie)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
+                    .onChange(of: searchedMovie) { newSearchValue in
+                        if newSearchValue.count >= 2 {
+                            MovieListViewModel.searchMovie(movieName: newSearchValue.trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? newSearchValue)
+                        }
+                    }
+
+
+
             
         List(MovieListViewModel.movies, id: \.imdbId) { movie in
             NavigationLink(

@@ -10,13 +10,20 @@ import SwiftUI
 struct PopUpView: View {
     let content: String
     @Binding var isPresented: Bool
-    
+    let image: String
     var body: some View {
         VStack {
             Spacer()
             ScrollView {
-                Text(content)
-                    .padding()
+                if content != "" {
+                    Text(content)
+                        .padding()
+                    
+                }else{
+                    SpecialImage(url: image)
+                        .frame(alignment: .center)
+                }
+                
             }
             //.frame(maxHeight: UIScreen.main.bounds.height * 0.5)
             .background(Color.white)
